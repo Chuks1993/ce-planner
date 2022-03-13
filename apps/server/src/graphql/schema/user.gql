@@ -1,0 +1,87 @@
+type User {
+  id: ID!
+  email: String!
+  firstName: String
+  lastName: String
+  defaultNumber: String
+  phoneNumbers: [PhoneNumber]
+  reminders: [Reminder]
+}
+
+type PhoneNumber {
+  number: ID!
+}
+
+type ActivateAccountResult {
+  data: Boolean
+  error: String
+}
+
+input CreateUserInput {
+  email: String!
+  firstName: String!
+  lastName: String!
+  password: String!
+  phoneNumber: String!
+}
+
+type UserResult {
+  data: User
+  error: String
+}
+
+type CreateUserResult {
+  data: Boolean
+  error: String
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
+  rememberMe: Boolean
+}
+
+input ResetPasswordInput {
+  password: String!
+  token: String!
+}
+
+input ForgetPasswordInput {
+  email: String!
+}
+
+input UpdateUserInput {
+  email: String!
+  firstName: String!
+  lastName: String!
+  defaultNumber: String!
+}
+
+type ResetPasswordResult {
+  data: Boolean
+  error: String
+}
+
+type UpdateUserResult {
+  data: User
+  error: String
+}
+
+type ForgetPasswordResult {
+  data: Boolean
+  error: String
+}
+
+type Query {
+  me: User
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): CreateUserResult!
+  loginUser(input: LoginUserInput!): UserResult!
+  logoutUser: Boolean!
+  activateAccount(token: String!): ActivateAccountResult!
+  resetPassword(input: ResetPasswordInput!): ResetPasswordResult!
+  forgetPassword(input: ForgetPasswordInput!): ForgetPasswordResult!
+  updateUser(input: UpdateUserInput!): UpdateUserResult!
+}

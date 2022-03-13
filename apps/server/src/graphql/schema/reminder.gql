@@ -1,0 +1,75 @@
+scalar DateTime
+
+type Reminder {
+  id: ID!
+  body: String!
+  sendAt: DateTime!
+  eventTitle: String!
+  eventCelebrant: String!
+  createdAt: DateTime!
+  updatedAt: DateTime
+  sendTo: String!
+  status: String!
+  sid: String!
+  user: User!
+}
+
+type RemindersResult {
+  data: [Reminder]
+  error: String
+}
+
+type CreateReminderResult {
+  data: Reminder
+  error: String
+}
+
+type DeleteReminderResult {
+  data: Boolean
+  error: String
+}
+
+type SendVerificationCodeResult {
+  data: String
+  error: String
+}
+
+type VerifyCodeResult {
+  data: Boolean
+  error: String
+}
+
+input CreateReminderInput {
+  eventCelebrant: String!
+  eventTitle: String!
+  sendAt: DateTime!
+  phoneNumber: String!
+}
+
+input DeleteReminderInput {
+  reminderId: String!
+}
+
+type Query {
+  reminders: RemindersResult!
+}
+
+input SendVerificationCodeInput {
+  phoneNumber: String!
+}
+
+input VerifyCodeInput {
+  sid: String!
+  sendTo: String!
+  code: String!
+  verifyAndAdd: Boolean
+}
+
+type Mutation {
+  createReminder(input: CreateReminderInput!): CreateReminderResult!
+  deleteReminder(input: DeleteReminderInput!): DeleteReminderResult!
+  sendVerificationCode(
+    input: SendVerificationCodeInput!
+  ): SendVerificationCodeResult!
+  verifyCode(input: VerifyCodeInput!): VerifyCodeResult!
+}

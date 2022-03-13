@@ -1,0 +1,51 @@
+fragment ReminderDetails on Reminder {
+  id
+  body
+  eventTitle
+  eventCelebrant
+  sendAt
+  sendTo
+  status
+  sid
+  createdAt
+  updatedAt
+}
+
+query reminders {
+  reminders {
+    data {
+      ...ReminderDetails
+    }
+    error
+  }
+}
+
+mutation sendVerificationCode($input: SendVerificationCodeInput!) {
+  sendVerificationCode(input: $input) {
+    data
+    error
+  }
+}
+
+mutation verifyCode($input: VerifyCodeInput!) {
+  verifyCode(input: $input) {
+    data
+    error
+  }
+}
+
+mutation createReminder($input: CreateReminderInput!) {
+  createReminder(input: $input) {
+    data {
+      ...ReminderDetails
+    }
+    error
+  }
+}
+
+mutation deleteReminder($input: DeleteReminderInput!) {
+  deleteReminder(input: $input) {
+    data
+    error
+  }
+}

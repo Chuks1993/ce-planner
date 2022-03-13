@@ -1,0 +1,70 @@
+fragment PhoneNumberDetail on PhoneNumber {
+  number
+}
+
+fragment UserDetail on User {
+  id
+  email
+  phoneNumbers {
+    ...PhoneNumberDetail
+  }
+  firstName
+  lastName
+  defaultNumber
+}
+
+mutation createUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    data
+    error
+  }
+}
+
+mutation loginUser($input: LoginUserInput!) {
+  loginUser(input: $input) {
+    data {
+      ...UserDetail
+    }
+    error
+  }
+}
+
+mutation updateUser($input: UpdateUserInput!) {
+  updateUser(input: $input) {
+    data {
+      ...UserDetail
+    }
+    error
+  }
+}
+
+mutation logoutUser {
+  logoutUser
+}
+
+query me {
+  me {
+    ...UserDetail
+  }
+}
+
+mutation activateAccount($token: String!) {
+  activateAccount(token: $token) {
+    data
+    error
+  }
+}
+
+mutation resetPassword($input: ResetPasswordInput!) {
+  resetPassword(input: $input) {
+    data
+    error
+  }
+}
+
+mutation forgetPassword($input: ForgetPasswordInput!) {
+  forgetPassword(input: $input) {
+    data
+    error
+  }
+}
