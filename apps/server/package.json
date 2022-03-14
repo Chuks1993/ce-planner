@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "rm -rf dist && yarn build && ts-node-dev -r tsconfig-paths/register --files ./src/index.ts",
     "build": "tsc",
-    "test": "jest --coverage",
     "lint": "eslint src --fix",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "generate": "graphql-codegen --config codegen.js",

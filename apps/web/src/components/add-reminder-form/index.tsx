@@ -21,7 +21,7 @@ import {
   Select
 } from 'ui'
 
-const AddReminderForm = () => {
+export const AddReminderForm = () => {
   // TODO: fix tommorrow and today
   // const today = new Date()
   // const tomorrow = new Date(today).toJSON().slice(0, 19)
@@ -29,6 +29,7 @@ const AddReminderForm = () => {
   const { mutate: createReminder } = useCreateReminderMutation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [me] = useSession({ required: true })
+  console.log({ me })
   const {
     register,
     handleSubmit,
@@ -156,5 +157,3 @@ const AddReminderForm = () => {
     </>
   )
 }
-
-export { AddReminderForm }

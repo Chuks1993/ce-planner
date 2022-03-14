@@ -1,5 +1,5 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "ce-planner",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -9,15 +9,28 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "test": "",
+    "test": "turbo run test",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prepare": "husky install",
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
+    "@mswjs/data": "^0.9.2",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.4.1",
+    "cypress": "^9.5.1",
+    "esbuild": "^0.14.25",
+    "esbuild-jest": "^0.5.0",
     "husky": "7.0.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "jest-watch-typeahead": "^1.0.0",
     "lint-staged": "12.3.3",
+    "msw": "^0.39.1",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },

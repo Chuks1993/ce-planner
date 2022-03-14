@@ -1,7 +1,3 @@
 import { extendTheme } from '@chakra-ui/react'
 
-export const myTheme = extendTheme({
-  fonts: {
-    Heading: 'Nova Mono'
-  }
-})
+export const myTheme = extendTheme({})
