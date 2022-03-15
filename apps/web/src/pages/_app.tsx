@@ -4,10 +4,10 @@ import type { NextPage } from 'next'
 import { ChakraProvider, myTheme } from 'ui'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-if (process.env.NODE_ENV === 'development') {
-  const { worker } = require('../mocks/browser')
-  worker.start()
-}
+// if (process.env.NODE_ENV === 'development') {
+//   const { worker } = require('../mocks/browser')
+//   worker.start()
+// }
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
