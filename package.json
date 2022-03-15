@@ -35,8 +35,8 @@
     "turbo": "latest"
   },
   "engines": {
-    "npm": ">=8.0.0",
-    "node": ">=17.0.0"
+    "npm": ">=6.0.0",
+    "node": ">=16.0.0"
   },
   "packageManager": "yarn@1.22.17",
   "lint-staged": {

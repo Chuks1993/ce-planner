@@ -13,6 +13,10 @@
     "gen-env": "gen-env-types .env -o src/env.d.ts -e .",
     "heroku-postbuild": "npm run build"
   },
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=16.0.0"
+  },
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.3",
     "@graphql-tools/merge": "^8.2.2",
