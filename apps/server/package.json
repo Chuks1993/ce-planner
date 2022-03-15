@@ -10,7 +10,8 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "generate": "graphql-codegen --config codegen.js",
     "migrate": "yarn prisma migrate dev",
-    "gen-env": "gen-env-types .env -o src/env.d.ts -e ."
+    "gen-env": "gen-env-types .env -o src/env.d.ts -e .",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.3",
