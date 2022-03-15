@@ -1,1 +1,1 @@
-web: cd ../.. && npx turbo run build --scope=server --include-dependencies --no-deps
+server: cd ../.. && npx turbo run build --scope=server --include-dependencies --no-deps
