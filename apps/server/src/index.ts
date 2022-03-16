@@ -54,11 +54,11 @@ async function main() {
   await apolloServer.start()
   apolloServer.applyMiddleware({ app, cors: false })
 
-  app.listen(parseInt(process.env.PORT), () =>
-    console.log(
-      `http://localhost:${process.env.PORT}${apolloServer.graphqlPath} we lit 🚀🚀🚀`
-    )
-  )
+  app.listen(parseInt(process.env.PORT) || 4000, () => {
+    console.log(`
+    🚀  Server is ready at PORT: ${process.env.PORT}
+  `)
+  })
 }
 
 main().catch(err => {
