@@ -16,7 +16,8 @@
   },
   "engines": {
     "npm": ">=6.0.0",
-    "node": ">=16.0.0"
+    "node": ">=16.0.0",
+    "yarn": "1.22.17"
   },
   "dependencies": {
     "@graphql-tools/load-files": "^6.5.3",
