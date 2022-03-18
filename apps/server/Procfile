@@ -1,1 +1,1 @@
-web: cd ../.. && yarn turbo run build --scope=server --include-dependencies --no-deps
+worker: cd ../.. && yarn turbo run build --scope=server --include-dependencies --no-deps

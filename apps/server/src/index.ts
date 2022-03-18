@@ -16,6 +16,7 @@ async function main() {
   const RedisStore = connectRedis(session)
   const redis = new Redis(process.env.REDIS_URL)
   const prisma = new PrismaClient()
+  const port = parseInt(process.env.PORT) || 4000
 
   app.use(
     cors({
@@ -54,9 +55,9 @@ async function main() {
   await apolloServer.start()
   apolloServer.applyMiddleware({ app, cors: false })
 
-  app.listen(parseInt(process.env.PORT) || 4000, () => {
+  app.listen(port, () => {
     console.log(`
-    🚀  Server is ready at PORT: ${process.env.PORT}
+    🚀  Server is ready at PORT: ${port}
   `)
   })
 }
