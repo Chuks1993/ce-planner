@@ -30,7 +30,7 @@ const Signup = () => {
     handleSubmit,
     register,
     getValues,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     resetField,
     getFieldState,
     setError,
@@ -50,8 +50,11 @@ const Signup = () => {
   const { isDirty: isPhoneNumFieldDirty, error: phoneErrors } =
     getFieldState('phoneNumber')
 
-  const { mutate: createUser, data: { createUser: { data } = {} } = {} } =
-    useCreateUserMutation()
+  const {
+    isLoading: createUserLoading,
+    mutate: createUser,
+    data: { createUser: { data } = {} } = {}
+  } = useCreateUserMutation()
   const [showPassword, setShowPassword] = React.useState(false)
   const [isVerified, setIsVerified] = React.useState(false)
 
@@ -300,7 +303,12 @@ const Signup = () => {
           </GridItem>
 
           <GridItem colSpan={5}>
-            <Button colorScheme="purple" isFullWidth type="submit">
+            <Button
+              isLoading={createUserLoading || isSubmitting}
+              colorScheme="purple"
+              isFullWidth
+              type="submit"
+            >
               Create Account
             </Button>
           </GridItem>

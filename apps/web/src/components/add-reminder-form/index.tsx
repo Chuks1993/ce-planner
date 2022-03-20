@@ -29,7 +29,6 @@ export const AddReminderForm = () => {
   const { mutate: createReminder } = useCreateReminderMutation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [me] = useSession({ required: true })
-  console.log({ me })
   const {
     register,
     handleSubmit,
