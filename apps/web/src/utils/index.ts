@@ -16,8 +16,6 @@ export const gqlClient =
         variables
       })
     })
-    console.log('env', process.env)
-
     const json = await res.json()
 
     if (json.errors) {
