@@ -1,0 +1,1 @@
+web: npx turbo run build --scope=web --include-dependencies --no-deps
