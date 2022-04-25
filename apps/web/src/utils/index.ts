@@ -4,7 +4,7 @@ export const gqlClient =
     variables?: TVariables
   ): (() => Promise<TData>) =>
   async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/graphql`, {
       method: 'POST',
       credentials: 'include',
       headers: {
